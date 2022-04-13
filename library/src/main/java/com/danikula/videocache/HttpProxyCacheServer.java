@@ -276,7 +276,7 @@ public class HttpProxyCacheServer {
 
     private void closeSocketInput(Socket socket) {
         try {
-            if (!socket.isInputShutdown()) {
+            if (!socket.isInputShutdown()&&socket.isConnected()){
                 socket.shutdownInput();
             }
         } catch (SocketException e) {
